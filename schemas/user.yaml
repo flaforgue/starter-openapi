@@ -1,0 +1,11 @@
+AuthorExample:
+  name: 'John Dow'
+  posts_count: 12
+
+Author:
+  type: object
+  properties:
+    name:
+      type: string
+    posts_count:
+      type: integer

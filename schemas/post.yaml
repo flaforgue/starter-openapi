@@ -1,0 +1,22 @@
+Post:
+  title: Post
+  example:
+    $ref: '#/PostExample'
+  type: object
+  properties:
+    title:
+      type: string
+    content:
+      type: string
+    author:
+      $ref: '../openapi.yaml#/components/schemas/UserAuthor'
+
+PostExample:
+  title: OpenAPI 3.0 is out!
+  published_at: 2019-02-01T12:41:21Z
+  author:
+    $ref: '../openapi.yaml#/components/examples/UserAuthorExample'
+  content: >-
+    # OpenAPI 3.0 is out!
+
+    This is insane!!

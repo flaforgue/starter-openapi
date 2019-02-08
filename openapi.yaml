@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: Neoxia Example API
+  description: An example of a complete API for Neoxia developers
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:4000/
+    description: Local mock server
+
+tags:
+  - name: Posts
+    description: Posts are the articles written by users and published to the blog.
+
+x-tagGroups:
+  - name: Blog
+    tags:
+      - Posts
+
+paths:
+#  /users:
+#    $ref: routes/users.yaml
+#  /users/{user-id}:
+#    $ref: routes/users-id.yaml
+#  /users/{user-id}/posts:
+#    $ref: routes/users-id-posts.yaml
+  /posts:
+    $ref: routes/posts.yaml
+#  /posts/{post-id}:
+#    $ref: routes/posts-id.yaml
+#  /posts/{post-id}/users:
+#    $ref: routes/posts-id-users.yaml
+#  /posts/{post-id}/users/{user-id}:
+#    $ref: routes/posts-id-users-id.yaml
+
+components:
+  schemas:
+    Post:
+      $ref: './schemas/post.yaml#/Post'
+    UserAuthor:
+      $ref: './schemas/user.yaml#/Author'
+
+  responses:
+    ListResponseContent:
+      $ref: './shared/list-response.yaml#/ListResponseContent'
+
+  examples:
+    PostExample:
+      $ref: './schemas/post.yaml#/PostExample'
+    UserAuthorExample:
+      $ref: './schemas/user.yaml#/AuthorExample'
+
+  parameters:
+    fields:
+      $ref: './shared/list-query-params.yaml#/fields'
+    filter:
+      $ref: './shared/list-query-params.yaml#/filter'
+    limit:
+      $ref: './shared/list-query-params.yaml#/limit'
+    offset:
+      $ref: './shared/list-query-params.yaml#/offset'
+    query:
+      $ref: './shared/list-query-params.yaml#/query'
+    sort:
+      $ref: './shared/list-query-params.yaml#/sort'

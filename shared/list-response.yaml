@@ -1,0 +1,14 @@
+ListQueryParams:
+  name: fields
+  in: query
+  description: Limit the returned fields to the list specified, separated by comma. Note that id is always returned.
+  schema:
+    type: string
+
+ListResponseContent:
+  type: object
+  properties:
+    page_number:
+      type: integer
+    page_count:
+      type: integer

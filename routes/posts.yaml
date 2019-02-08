@@ -1,0 +1,29 @@
+get:
+  summary: Retrieve a list of Posts
+  tags: ["Posts"]
+  parameters:
+    - $ref: '../openapi.yaml#/components/parameters/fields'
+    - $ref: '../openapi.yaml#/components/parameters/filter'
+    - $ref: '../openapi.yaml#/components/parameters/limit'
+    - $ref: '../openapi.yaml#/components/parameters/offset'
+    - $ref: '../openapi.yaml#/components/parameters/query'
+    - $ref: '../openapi.yaml#/components/parameters/sort'
+  responses:
+    '200':
+      description: A list of Posts was retrieved successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../openapi.yaml#/components/responses/ListResponseContent'
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '../openapi.yaml#/components/schemas/Post'
+          example:
+            page_number: 1
+            page_count: 12
+            data:
+              - $ref: '../openapi.yaml#/components/examples/PostExample'
