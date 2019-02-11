@@ -3,8 +3,6 @@ fields:
   in: query
   description: >
     Limit the returned fields to the list specified, separated by comma. Note that id is always returned.
-  schema:
-    type: string
 
 filter:
   name: filter
@@ -12,38 +10,28 @@ filter:
   description: >
     The collection items filter requires a special format.
     Use "," for multiple allowed values.  Use ";" for multiple fields.
-  schema:
-    type: string
 
 limit:
   name: limit
   in: query
   description: >
     Limit the number of returned items.
-  schema:
-    type: string
 
 offset:
   name: offset
   in: query
   description: >
     The offset of the data to retrieve.
-  schema:
-    type: string
 
 query:
   name: query
   in: query
   description: >
     A partial search of the text fields.
-  schema:
-    type: string
 
 sort:
   name: sort
   in: query
   description: >
     The field(s) to sort by. Use "," for multiple sort. Prefix with "-" for descending sort.
-  schema:
-    type: string
 

@@ -45,10 +45,8 @@ components:
       $ref: './shared/list-response.yaml#/ListResponseContent'
 
   examples:
-    PostExample:
-      $ref: './schemas/post.yaml#/PostExample'
-    UserAuthorExample:
-      $ref: './schemas/user.yaml#/AuthorExample'
+    ListPostsExample:
+      $ref: './schemas/post.yaml#/ListPostsExample'
 
   parameters:
     fields:

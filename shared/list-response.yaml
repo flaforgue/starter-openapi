@@ -6,6 +6,7 @@ ListQueryParams:
     type: string
 
 ListResponseContent:
+  description: Default list response
   type: object
   properties:
     page_number:

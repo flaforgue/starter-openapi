@@ -1,0 +1,19 @@
+{
+  "name": "openapi-example",
+  "version": "1.0.0",
+  "description": "## Doc generation: [ReDoc](https://github.com/Rebilly/ReDoc/)",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run bundle && npm run convert",
+    "bundle": "mkdir -p dist && npx swagger-cli bundle -o dist/bundle.json -r openapi.yaml",
+    "convert": "npx api-spec-converter --from=openapi_3 --to=swagger_2 dist/bundle.json > dist/bundle_swagger.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "api-spec-converter": "^2.7.25",
+    "swagger-cli": "^2.2.1"
+  }
+}
