@@ -12,6 +12,17 @@ $ docker-compose up
 
 And visit [http://localhost:8080](http://localhost:8080)
 
+## Project structure presentation
+
+- resources : contains one foler per resource managed by the API
+- resources/*/routes : contains one file per route pattern for the resource
+- resources/*/schemas : contains one file per possible schema for the resource (think reusability)
+- shared : contains everything that is shared between all resources
+- shared/parameters : contains all shared parameters (like pagination)
+- shared/parameters/resources-by-id.yaml : contains all resource id parameters (its easier to have it all here)
+- shared/responses : contains all shared responses which need a dedicated file (if more than one line to document it)
+- shared/schemas : contains all shared schemas (like pagination results schema)
+
 ## General Rules
 
 - Indent with 2 spaces
