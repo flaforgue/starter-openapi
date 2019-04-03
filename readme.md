@@ -1,6 +1,6 @@
 # OpenAPI documentation for E-CRM Factory API
 
-This project contains a starter for an openapi documentation including a basic CRUD (for a `users` resource), pagination and some other recurrent needs. Pensez à mettre à jour la réponse 422 qui dépend de l'outil de validation ou du framework utilisé.
+This project contains a starter for an openapi documentation including a basic CRUD (for a `users` resource), pagination and some other recurrent needs. Mind to update the 422 response, which depends on the validation tool/framework used by your project.
 
 ## Project setup
 
@@ -13,6 +13,10 @@ $ docker-compose up
 And visit [http://localhost:8080](http://localhost:8080)
 
 ## Project structure presentation
+
+This structure is perfectly adapted for a REST API, but be modified to fit other types of API. The goal is to have a resource based organization to make it easy to add more and more resources because your API will grow fast !
+
+Here are the responsabilities of each folder :
 
 - resources : contains one foler per resource managed by the API
 - resources/*/routes : contains one file per route pattern for the resource
