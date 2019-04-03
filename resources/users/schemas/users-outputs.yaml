@@ -1,0 +1,14 @@
+allOf:
+  - $ref: '/openapi/index.yaml#/components/schemas/UsersBase'
+  - type: 'object'
+    properties:
+      illustration_url: # computed field
+        type: 'string'
+        format: 'url'
+        description: 'URL of the illustration of the user.'
+        example: 'https://someurl.com/users/1/nibuivygbhnji.png'
+      # postal_addresses: # loaded relation (commented because it needs the PostalAddresses schema, not existing in this example)
+      #   type: 'array'
+      #   description: 'Postal addresses of the user.'
+      #   items:
+      #     $ref: '/openapi/index.yaml#/components/schemas/PostalAddresses'

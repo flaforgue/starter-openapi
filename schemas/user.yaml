@@ -1,7 +1,0 @@
-Author:
-  type: object
-  properties:
-    name:
-      type: string
-    posts_count:
-      type: integer

@@ -1,0 +1,48 @@
+Page:
+  in: 'query'
+  name: 'page'
+  description: 'The index of the page to get.'
+  schema:
+    type: 'integer'
+  example: 2
+PerPage:
+  in: 'query'
+  name: 'per_page'
+  schema:
+    type: 'integer'
+  description: 'The number of items per page.'
+  example: 25
+Search:
+  in: 'query'
+  name: 'search'
+  schema:
+    type: 'string'
+  description: 'The value to search (must be used with the "search_by" parameter).'
+  example: 'John'
+SearchBy:
+  in: 'query'
+  name: 'search_by'
+  schema:
+    type: 'array'
+    items:
+      type: 'string'
+      description: 'An attribute to search on.'
+      example: 'title'
+  description: 'The attribute to search on, (must be used with the "search" parameter).'
+SortBy:
+  in: 'query'
+  name: 'sort_by'
+  schema:
+    type: 'string'
+  description: 'The attribute to sort by.'
+  example: 'first_name'
+SortDirection:
+  in: 'query'
+  name: 'sort_direction'
+  schema:
+    type: 'string'
+    enum:
+      - 'asc'
+      - 'desc'
+  description: 'The sort direction.'
+  example: 'desc'

@@ -1,0 +1,10 @@
+description: 'The specified resource was not found.'
+content:
+  application/json; charset=utf-8:
+    schema:
+      type: 'object'
+      properties:
+        message:
+          type: 'string'
+          enum:
+            - 'The specified resource was not found.'

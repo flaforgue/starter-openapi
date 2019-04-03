@@ -1,0 +1,7 @@
+UserId:
+  in: 'path'
+  name: 'userId'
+  schema:
+    type: 'integer'
+  description: 'The id of a user.'
+  required: true

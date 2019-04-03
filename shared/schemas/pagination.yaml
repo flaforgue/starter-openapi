@@ -1,0 +1,12 @@
+type: 'object'
+properties:
+  per_page:
+    type: 'integer'
+  current_page:
+    type: 'integer'
+  from:
+    type: 'integer'
+  to:
+    type: 'integer'
+  total:
+    type: 'integer'

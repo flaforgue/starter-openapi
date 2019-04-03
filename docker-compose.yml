@@ -2,12 +2,11 @@ version: '3'
 
 services:
   redoc:
-    container_name: redoc
-    image: redocly/redoc:latest
-    environment:
-        SPEC_URL: http://localhost:8080/openapi/openapi.yaml
-    ports:
-      - "8080:80"
+    image: 'redocly/redoc:latest'
     volumes:
-      - .:/usr/share/nginx/html/openapi:cached
-
+      - '.:/usr/share/nginx/html/openapi:cached'
+    ports:
+      - '8080:80'
+    environment:
+      SPEC_URL: 'http://localhost:8080/openapi/index.yaml'
+      PAGE_TITLE: 'Doc API'

@@ -1,0 +1,56 @@
+openapi: 3.0.0
+
+info:
+  title: 'Doc API'
+  description: 'Documentation API.'
+  version: '1.0.0'
+
+tags:
+  - name: 'Users informations'
+    description: 'Users of the appliation'
+
+x-tagGroups:
+  - name: 'Users'
+    tags:
+      - 'Users informations'
+
+paths:
+  /users:
+    $ref: 'resources/users/routes/users.yaml'
+  /users/{userId}:
+    $ref: 'resources/users/routes/users-by-id.yaml'
+
+components:
+  schemas:
+    Pagination:
+      $ref: './shared/schemas/pagination.yaml'
+    UsersBase:
+      $ref: './resources/users/schemas/users-base.yaml'
+    UsersInputs:
+      $ref: './resources/users/schemas/users-inputs.yaml'
+    UsersOutputs:
+      $ref: './resources/users/schemas/users-outputs.yaml'
+
+  parameters:
+    Page:
+      $ref: './shared/parameters/pagination.yaml#/Page'
+    PerPage:
+      $ref: './shared/parameters/pagination.yaml#/PerPage'
+    Search:
+      $ref: './shared/parameters/pagination.yaml#/Search'
+    SearchBy:
+      $ref: './shared/parameters/pagination.yaml#/SearchBy'
+    SortBy:
+      $ref: './shared/parameters/pagination.yaml#/SortBy'
+    SortDirection:
+      $ref: './shared/parameters/pagination.yaml#/SortDirection'
+    UserId:
+      $ref: './shared/parameters/resources-by-id.yaml#/UserId'
+
+  responses:
+    '422':
+      $ref: './shared/responses/422.yaml'
+    '204':
+      description: 'No content.'
+    '404':
+      $ref: './shared/responses/404.yaml'

@@ -1,0 +1,10 @@
+description: 'Unprocessable Entity.'
+content:
+  application/json; charset=utf-8:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+        errors:
+          type: object

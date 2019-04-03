@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 'Users informations'
+  summary: 'Get all the details of a user.'
+  parameters:
+    - $ref: '/openapi/index.yaml#/components/parameters/UserId'
+  responses:
+    '200':
+      description: 'Ok.'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '/openapi/index.yaml#/components/schemas/UsersOutputs'
+    '404':
+      $ref: '/openapi/index.yaml#/components/responses/404'
+put:
+  tags:
+    - 'Users informations'
+  summary: 'Update a user.'
+  parameters:
+    - $ref: '/openapi/index.yaml#/components/parameters/UserId'
+  requestBody:
+    description: 'New informations of the user.'
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '/openapi/index.yaml#/components/schemas/UsersInputs'
+  responses:
+    '200':
+      description: 'The user has been updated and returned.'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '/openapi/index.yaml#/components/schemas/UsersOutputs'
+    '422':
+      $ref: '/openapi/index.yaml#/components/responses/422'
+    '404':
+      $ref: '/openapi/index.yaml#/components/responses/404'
+delete:
+  tags:
+    - 'Users informations'
+  summary: 'Delete a user.'
+  parameters:
+    - $ref: '/openapi/index.yaml#/components/parameters/UserId'
+  responses:
+    '204':
+      $ref: '/openapi/index.yaml#/components/responses/204'
+    '404':
+      $ref: '/openapi/index.yaml#/components/responses/404'

@@ -1,0 +1,45 @@
+get:
+  tags:
+    - 'Users informations'
+  summary: 'Retrieve multiple users.'
+  parameters:
+    - $ref: '/openapi/index.yaml#/components/parameters/Page'
+    - $ref: '/openapi/index.yaml#/components/parameters/PerPage'
+    - $ref: '/openapi/index.yaml#/components/parameters/Search'
+    - $ref: '/openapi/index.yaml#/components/parameters/SearchBy'
+    - $ref: '/openapi/index.yaml#/components/parameters/SortBy'
+    - $ref: '/openapi/index.yaml#/components/parameters/SortDirection'
+  responses:
+    '200':
+      description: 'The users satisfying the filters (paginated).'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            allOf:
+              - $ref: '/openapi/index.yaml#/components/schemas/Pagination'
+              - type: 'object'
+                properties:
+                  data:
+                    type: 'array'
+                    items:
+                      $ref: '/openapi/index.yaml#/components/schemas/UsersBase'
+post:
+  tags:
+    - 'Users informations'
+  summary: 'Create a new user.'
+  requestBody:
+    description: 'The informations of the user to create.'
+    required: true
+    content:
+      multipart/form-data: # only because we upload a file (else, application/json)
+        schema:
+          $ref: '/openapi/index.yaml#/components/schemas/UsersInputs'
+  responses:
+    '201':
+      description: 'The user has been created and returned.'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '/openapi/index.yaml#/components/schemas/UsersOutputs'
+    '422':
+      $ref: '/openapi/index.yaml#/components/responses/422'

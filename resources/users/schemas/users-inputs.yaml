@@ -1,0 +1,11 @@
+allOf:
+  - $ref: '/openapi/index.yaml#/components/schemas/UsersBase'
+  - type: 'object' # in inputs only because we will not directly save a file
+    properties:
+      illustration:
+        type: 'string'
+        format: 'binary'
+        description: 'The binary of the illustration of the user.'
+  - required: # required only for input context
+    - 'first_name'
+    - 'last_name'

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run bundle && npm run convert",
-    "bundle": "mkdir -p dist && npx swagger-cli bundle -o dist/bundle.json -r openapi.yaml",
+    "bundle": "mkdir -p dist && npx swagger-cli bundle -o dist/bundle.json -r index.yaml",
     "convert": "npx api-spec-converter --from=openapi_3 --to=swagger_2 dist/bundle.json > dist/bundle_swagger.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
